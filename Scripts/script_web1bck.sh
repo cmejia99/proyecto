@@ -1,6 +1,6 @@
 #!/usr/bin/env bash   
-CONTENEDOR="web1"
-IP=192.168.100.3
+CONTENEDOR="web1bck"
+IP=192.168.100.5
 
 echo $CONTENEDOR
 echo $IP
@@ -36,7 +36,7 @@ cat <<TEST > index.html
   -->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Se encuentra en el servidor web1</title>
+    <title>Se encuentra en el servidor web1 backup</title>
     <style type="text/css" media="screen">
   * {
     margin: 0px 0px 0px 0px;
@@ -92,7 +92,7 @@ cat <<TEST > index.html
     <div class="main_page">
       <div class="page_header floating_element">
         <span class="floating_element">
-          ! Ingresos desde el servidor web1 !
+          ! Ingresos desde el servidor web1 backup !
         </span>
       </div>
   </body>
