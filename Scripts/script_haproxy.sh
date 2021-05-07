@@ -78,8 +78,24 @@ frontend http
 
 TEST
 
+echo "Configurando pagina de error 503.html"
+cat <<TEST > 503.http
+HTTP/1.0 503 Service Unavailable
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<html>
+<head><title>No disponible</title></head>
+<body><h1>Lo sentimos, el sitio no se encuentra disponible &#128534; </h1>
+! Nuestros mejores ingenieros ya los estan validando! &#128170;
+</body></html>
+TEST
+
+
 echo "Se transmite el archivo al contenedor"
 lxc file push haproxy.cfg haproxy/etc/haproxy/
+lxc file push 503.http haproxy/etc/haproxy/errors/
 
 
 echo "Iniciando el servicios haproxy"
