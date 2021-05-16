@@ -68,8 +68,8 @@ backend web-backend
 
    server web1 192.168.100.3:80 check   
    server web2 192.168.100.4:80 check   
-   server web1bck 192.168.100.5:80 check   
-   server web2bck 192.168.100.6:80 check   
+   server web1bck 192.168.100.5:80 check  backup 
+   server web2bck 192.168.100.6:80 check  backup 
 
 frontend http
   bind *:80
